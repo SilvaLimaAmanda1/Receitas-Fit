@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Receitas Fit</title>
+</head>
+<body> 
+<header>
+	<nav class="navbar">
+		<div class="logo"><i class="fa-solid fa-leaf"></i> FitLog</div>
+		<ul class="nav-links">
+			<li><a href="#">Início</a></li>
+			<li><a href="">Receitas</a></li>
+			<li><a href="">Sobre</a></li>
+		</ul>
+	</nav>
+</header> 
+<main> 
+<div class="card">
+    <div class="card-topo">
+        <img src="assets/morango-com-whey.jpg" alt="Sorvete de Whey">
+    </div>
+    
+    <div class="card-corpo">
+        <h2>Sorvete de Morango Fit</h2>
+        <p>Uma sobremesa proteica e refrescante para o seu pós-treino.</p>
+        
+		<div class="card-info">
+    		<span><i class="fa-solid fa-clock"></i> 5 min</span>
+    		<span><i class="fa-solid fa-dumbbell"></i> Alto Protein</span>
+		</div>
+		<button class="btn-curtir curtir-off">
+    		<span class="coracao"><i class="fa-solid fa-heart"></i> </span>
+		</button>
+        <a class="btn-video" href="https://www.youtube.com/shorts/N-XNUjeQRcw" target="_blank"><i class="fa-brands fa-youtube"></i> Assistir Vídeo</a>
+    </div>
+</div>
+<!--card 2 -->
+<div class="card">
+	    <div class="card-topo">
+        <img src="assets/calda-de-choc-com-whey.jpg" alt="Calda de chocolate com whey protein">
+    </div>
+    
+    <div class="card-corpo">
+        <h2>Calda de chocolate com whey protein</h2>
+        <p>A calda de chocolate com whey protein é uma receita-chave para complementar alimentos doces, incluindo as frutas.</p>
+        
+        <div class="card-info">
+    		<span><i class="fa-solid fa-clock"></i> 5 min</span>
+    		<span><i class="fa-solid fa-dumbbell"></i> Alto Protein</span>
+		</div>
+        <button class="btn-curtir curtir-off">
+    		<span class="coracao"><i class="fa-solid fa-heart"></i> </span>
+		</button>
+        <a class="btn-video" href="https://blog.gsuplementos.com.br/calda-de-chocolate-com-whey-protein/" target="_blank"><i class="fa-brands fa-youtube"></i> Assistir Vídeo</a>
+    </div>
+</div>
+<!--card 3 -->
+<div class="card">
+	    <div class="card-topo">
+        <img src="assets/BOMBOM-PRESTÍGIO-FIT.jpg" alt="BOMBOM PRESTÍGIO FIT">
+    </div>
+    
+    <div class="card-corpo">
+        <h2>Bombom de prestígio fit</h2>
+        <p>Bombom prestígio fit pode ser uma ótima opção para quem quer comer doce sem sair da dieta</p>
+        
+        <div class="card-info">
+    		<span><i class="fa-solid fa-clock"></i> 1 hora e 50 minutos</span>
+    		<span><i class="fa-solid fa-dumbbell"></i> Alto Protein</span>
+		</div>
+        <button class="btn-curtir curtir-off">
+    		<span class="coracao"><i class="fa-solid fa-heart"></i> </span>
+		</button>
+        <a class="btn-video" href="https://blog.gsuplementos.com.br/bombom-prestigio-fit/" target="_blank"><i class="fa-brands fa-youtube"></i>Ver Receita</a>
+    </div>
+</div> 
+   
+</main>
+
+<footer>
+    <div class="footer-conteudo">
+        <p>&copy; 2026 Desenvolvido por <strong>Amanda Silva</strong> & Assistente Gemini</p>
+    </div>
+</footer>
+
+<script>
+// Usamos querySelectorAll para pegar TODOS os botões daquela classe
+const botoes = document.querySelectorAll('.btn-curtir');
+
+// Criamos um loop: "Para cada botao da minha lista de botoes..."
+botoes.forEach(function(botao) {
+    
+    botao.addEventListener('click', function() {
+        // Agora usamos 'botao' (no singular) para referenciar qual foi clicado
+        botao.classList.toggle('curtir-on');
+        botao.classList.toggle('curtir-off');
+
+        if (botao.classList.contains('curtir-on')) {
+            botao.innerHTML = '<span class="coracao">❤</span> Curtido!';
+        } else {
+            botao.innerHTML = '<span class="coracao">❤</span> Curtir';
+        }
+    });
+    
+});
+
+</script>
+</body>
+</html>

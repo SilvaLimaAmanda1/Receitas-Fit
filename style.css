@@ -1,0 +1,225 @@
+:root {
+    /* Tons de Verde "Saudável" */
+    --cor-primaria: #27ae60;    /* Verde esmeralda */
+    --cor-primaria-hover: #219150; 
+    --cor-fundo: #f0fff4;       /* Um branco levemente esverdeado */
+    --cor-texto: #2c3e50;
+    --borda-raio: 15px;
+    --fonte-padrao: 'Poppins', sans-serif;
+}
+
+:root {
+    /* ... suas cores de antes ... */
+    --fonte-padrao: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Aplicando a fonte nova */
+    font-family: var(--fonte-padrao);
+    /* Melhorando a leitura (essencial para TDAH/Dislexia) */
+    -webkit-font-smoothing: antialiased; /* Deixa as letras mais nítidas */
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+/* Ajuste fino para os títulos ficarem mais marcantes */
+h2 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+header{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    position: sticky;/* O menu "gruda" no topo enquanto você rola a página */
+    top: 0;
+    z-index: 1000;/* Garante que o menu fique sempre por cima dos cards */
+}
+.navbar{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;/* Logo de um lado, links do outro */
+    align-items: center;
+    padding: 0 20px;   
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.nav-links a:hover{
+    color: var(--cor-primaria);
+}
+
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+/* A caixa maior (o Card) */
+.card {
+    width: 300px;
+    background-color: white;
+    border-radius: 15px; /* Bordas arredondadas */
+    overflow: hidden;    /* Faz a imagem respeitar o arredondamento do card */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave */
+    transition: 0.3s;
+    margin: 20px;
+}
+
+/* Efeito de flutuar ao passar o mouse */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* A caixa da imagem */
+.card-topo img {
+    width: 100%;    /* Imagem ocupa toda a largura do card */
+    height: 200px;
+    object-fit: cover; /* Corta a imagem sem distorcer */
+}
+
+/* A caixa do texto (dando respiro/padding) */
+.card-corpo {
+    padding: 20px;
+}
+
+.card-corpo h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+/* A caixinha de info (usando Flexbox para alinhar) */
+.card-info {
+    display: flex;
+    justify-content: space-between; /* Um para cada lado */
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+/* Isso pinta todos os ícones dentro da div de info */
+.card-info i {
+    color: var(--cor-primaria); /* A mesma cor da sua logo */
+    margin-right: 5px; /* Dá um espacinho entre o ícone e o texto */
+}
+.btn-curtir{
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+.curtir-off{
+    background-color: #eee;
+    color: #555;
+}
+.curtir-on{
+    background-color: var(--cor-primaria);
+    color: white;
+    transform: scale(1.1);
+}
+.curtir-on i {
+    color: var(--cor-primaria);
+}
+.coracao{
+    font-size: 18px;
+}
+.btn-video{
+    display: block;
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: var(--borda-raio);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.btn-video:hover{
+    background-color: var(--cor-primaria-hover);
+}
+
+
+footer {
+    width: 100%;
+    background-color: var(--cor-texto); /* Um tom escuro para contrastar */
+    padding: 20px 0;
+    margin-top: auto; /* A "mágica" para o rodapé ficar sempre no fim */
+    border-top: 3px solid var(--cor-primaria); /* Linha verde de destaque */
+}
+
+.footer-conteudo {
+    text-align: center;
+}
+
+footer p {
+    color: #ffffff; /* Texto branco no fundo escuro */
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.8; /* Deixa o texto levemente suave */
+}
+
+footer strong {
+    color: var(--cor-primaria); /* Seu nome em destaque com o verde saudável */
+}
+/* "Se a tela tiver no máximo 600px de largura, faça isso:" */
+@media (max-width: 600px) {
+    main{
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .card{
+    width: 95%;
+    margin: 10px 0;
+}
+    h2{
+        font-size: 1.2rem;
+    }
+
+    .navbar{
+        flex-direction: column;/* No celular, logo fica em cima dos links */
+        gap: 10px;
+    }
+    .nav-links{
+        gap: 15px;
+        padding: 0;
+    }
+    .nav-links a{
+        font-size: 14px;/* Diminui um pouco a letra no celular */
+    }
+
+
+}   
+
